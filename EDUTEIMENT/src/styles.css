@@ -27,7 +27,6 @@
   --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
-/* ===== Dark Mode ===== */
 body.dark-mode {
   --bg: #121212;
   --surface: #1e1e1e;
@@ -40,7 +39,7 @@ body.dark-mode {
   --ok: #2ecc71;
   --warn: #f1c40f;
   --danger: #ff7676;
-  --primary-color: #ffffff; 
+  --primary-color: #4c13b6; 
   --secondary-color: #1e1e1e; 
   --accent-color: #ffd66b; 
   --background-color: #121212; 
@@ -49,17 +48,15 @@ body.dark-mode {
   --shadow-color: rgba(0, 0, 0, 0.6);
 }
 
-/* Botão Dark Mode */
 #darkModeToggle {
   cursor: pointer;
   font-size: 1.6rem;
   background: none;
   border: none;
-  color: var(--text);
+  color: var(--text-color);
   margin-left: 1rem;
   transition: transform 0.3s;
 }
-
 #darkModeToggle:hover {
   transform: scale(1.2);
 }
