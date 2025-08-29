@@ -4,6 +4,8 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 :root {
+  --aqui-bg: #d0f0f4;
+  --aqui-text: #1e2240;
   --bg: #fffaeb;
   --surface: #d0f0f4;
   --card: #1e2240;
@@ -18,7 +20,7 @@
   --shadow: 0 10px 30px rgba(0,0,0,.25);
   --radius: 20px;
   --radius-lg: 28px;
-  --primary-color: #471e16; 
+  --primary-color: #231647; 
   --secondary-color: #d0f0f4; 
   --accent-color: #ffd66b; 
   --background-color: #fffaeb; 
@@ -26,8 +28,14 @@
   --card-bg: #FFFFFF; 
   --shadow-color: rgba(0, 0, 0, 0.1);
 }
+     .aqui {
+  background-color: var(--aqui-bg);
+  color: var(--aqui-text);
+     }
 
 body.dark-mode {
+  --aqui-text: #d0f0f4;
+   --aqui-bg:#171a2b;
   --bg: #121212;
   --surface: #1e1e1e;
   --card: #2c2c2c;
@@ -39,7 +47,7 @@ body.dark-mode {
   --ok: #2ecc71;
   --warn: #f1c40f;
   --danger: #ff7676;
-  --primary-color: #4c13b6; 
+  --primary-color: #2573b3; 
   --secondary-color: #1e1e1e; 
   --accent-color: #ffd66b; 
   --background-color: #121212; 
