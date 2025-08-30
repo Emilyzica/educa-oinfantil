@@ -217,9 +217,56 @@ section { padding: clamp(54px, 7vw, 86px) 0 }
 /* =====================
    Extras
 ====================== */
-.features { grid-template-columns: repeat(3, 1fr) }
-.feature { display:grid; grid-template-columns: 52px auto; gap: 12px; align-items:flex-start; padding: 14px; border-radius: 16px; border:1px dashed rgba(255,255,255,.12) }
-.feature .icon { width: 52px; height: 52px; display:grid; place-items:center; border-radius: 14px; background: color-mix(in oklab, var(--brand) 16%, transparent); color:#fff; font-size: 22px }
+/*AQUI BENEFICIIO */
+.features { 
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+   }
+
+.feature {
+   display:grid;
+   grid-template-columns: 
+   52px auto; gap: 12px; 
+   align-items:flex-start; 
+   padding: 14px; 
+   border-radius: 16px; 
+   border:1px dashed rgba(255,255,255,.12) ;
+  }
+
+.feature .icon { 
+  width: 52px; 
+  height: 52px; 
+  display:grid; 
+  place-items:center;
+  border-radius: 14px; 
+  background: color-mix(in oklab, var(--brand) 16%, transparent); 
+  color:#fff; 
+  font-size: 2rem;
+}
+
+@media (max-width: 900px) {
+  .features { 
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px; 
+  }
+  .feature .icon {
+  font-size: 1.5rem; /* Tamanho padrão */
+  }
+  .feature h4 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+}
+  
+
+
+@media (max-width: 600px) {
+  .features { 
+    grid-template-columns: 1fr; 
+    gap: 10px; 
+  }
+  
+}
 
 /* =====================
    Footer
