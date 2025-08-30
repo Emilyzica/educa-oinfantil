@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alfa Play — Histórias Infantis Personalizadas</title>
+  <meta name="description" content="Crie histórias infantis personalizadas: os responsáveis escolhem a idade, temas e personagens. Site rápido, acessível e responsivo." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="sistemastyle.css" />
+  <script defer src="scriptsistema.js"></script>
+</head>
+<body>
+  <a class="sr-only" href="#main">Pular para conteúdo</a>
+
+  <header class="header" aria-label="Cabeçalho">
+  <div class="container wrap">
+    
+    <div class="brand">
+      <a href="sistema.html">
+        <img id="mascote" src="../src/perfil (1).png" alt="Mascote Alfa Play" loading="lazy" class="logo">
+        <span class="name">Alfa Play</span>
+      </a>
+    </div>
+
+    <nav class="primary" aria-label="Principal">
+     <a href="sistema.html">Inicio</a>
+        <a href="configurar.html">Criar Histórias</a>
+        <a href="responsavel.html">Painel Responsável</a>
+    </nav>
+    
+    <div class="actions">
+      
+      <button id="themeBtn" class="btn ghost" aria-pressed="false" aria-label="Alternar tema">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      
+      <a href="sistema/sistema.html">
+        <button class="btn primary">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Criar agora
+        </button>
+      </a>
+      
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+  </div>
+</header>
+  <aside class="drawer" id="drawer" aria-label="Menu móvel" hidden>
+    <button class="btn ghost" id="closeDrawer" style="width:100%"><i class="fa-solid fa-xmark"></i> Fechar</button>
+    <nav style="margin-top:16px">
+    <a href="sistema.html">Inicio</a>
+        <a href="configurar.html">Criar Histórias</a>
+        <a href="responsavel.html">Painel Responsável</a>
+    </nav>
+  </aside>
+
+  
+  <!-- ...restante do código... -->
+    <!-- Sidebar -->
+    
+
+    <!-- Conteúdo -->
+    <section class="content">
+  <!-- Seção de Perfis (Adicionar Filho) -->
+  <header class="dashboard-header">
+    <h1>Painel do Responsável</h1>
+    <button id="addFilhoBtn" class="btn primary">
+      <i class="fa-solid fa-plus"></i> Adicionar Filho
+    </button>
+  </header>
+  <div id="perfil" class="cards-grid"></div>
+</section>
+
+<!-- Seção separada para Histórico -->
+<section class="content" style="margin-top:40px;">
+  <header class="dashboard-header">
+    <h2>Histórico de Leituras</h2>
+    <button id="limparHistoricoBtn" class="btn ghost" style="margin-left:16px;">
+      <i class="fa-solid fa-trash"></i> Limpar Histórico
+    </button>
+  </header>
+  <div id="historico" class="history">
+    <ul id="listaHistorico"></ul>
+  </div>
+</section>
+
+<script>
+ document.getElementById('limparHistoricoBtn').addEventListener('click', function() {
+  document.getElementById('listaHistorico').innerHTML = '';
+  localStorage.removeItem('historico');
+  historico = []; // Zera a variável em memória
+
+  });
+</script>
+ 
+
+  <!-- Modal para adicionar/editar filho -->
+  <!-- ...existing code... -->
+<div id="modal" class="hidden" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#0008;justify-content:center;align-items:center;">
+  <!-- ...conteúdo do modal... -->
+
+<!-- ...existing code... -->
+<div id="modal" class="hidden" style="
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: #0008;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+">
+  <div style="background:white;padding:20px;border-radius:10px;min-width:300px;max-width:90vw;">
+    <h3 id="modalTitle">Adicionar Filho</h3>
+    <form id="filhoForm">
+      <input type="hidden" id="editIndex">
+      <label>Nome:</label>
+      <input type="text" id="nome" required style="width:100%;margin-bottom:10px;"><br>
+      <label>Idade:</label>
+      <input type="number" id="idade" required style="width:100%;margin-bottom:10px;"><br>
+      <label>Preferências:</label>
+      <input type="text" id="preferencias" placeholder="Ex: Animais, Fantasia" style="width:100%;margin-bottom:10px;"><br>
+      <label>Foto:</label>
+      <input type="file" id="foto" accept="image/*" style="width:100%;margin-bottom:10px;"><br>
+      <div style="text-align:right;">
+        <button type="button" class="btn" onclick="fecharModal()">Cancelar</button>
+        <button type="submit" class="btn primary">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+  </div>
+
+  <footer>
+        <img src="../src/wave.svg" alt="">
+        <div id="footer_items">
+            <span id="copyright">
+                Crie histórias únicas para seus filhos.
+            </span>
+          <div class="hero-buttons">
+        <a href="sistema/sistema.html" class="btn primary"><i class="fa-solid fa-wand-magic-sparkles"></i> Criar agora</a>
+        <a href="comousar.html" class="btn ghost"><i class="fa-solid fa-circle-info"></i> Saiba mais</a>
+      </div>
+            
+            </div>
+        </div>
+    </footer>
+
+
+    </body>
+    </html>
+    
