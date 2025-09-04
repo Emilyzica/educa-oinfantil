@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alfa Play — Histórias Infantis Personalizadas</title>
+  <meta name="description"
+    content="Crie histórias infantis personalizadas: os responsáveis escolhem a idade, temas e personagens. Site rápido, acessível e responsivo." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="sistemastyle.css" />
+  <script defer src="scriptsistema.js"></script>
+</head>
+
+<body>
+  <a class="sr-only" href="#main">Pular para conteúdo</a>
+
+  <header class="header" aria-label="Cabeçalho">
+    <div class="container wrap">
+      <div class="brand">
+        <a href="sistema.html"><img id="mascote" src="../src/perfil (1).png" alt="Mascote Alfa Play" loading="lazy"
+            class="logo">
+          <span class="name">Alfa Play</span></a>
+      </div>
+
+      <nav class="primary" aria-label="Principal">
+        <a href="sistema.html">Inicio</a>
+        <a href="configurar.html">Criar Histórias</a>
+        <a href="responsavel.html">Painel Responsável</a>
+      </nav>
+
+      <div class="actions">
+        <button id="themeBtn" class="btn ghost" aria-pressed="false" aria-label="Alternar tema"><i
+            class="fa-solid fa-moon"></i></button>
+        <a href="configurar.html"><button class="btn primary"><i class="fa-solid fa-wand-magic-sparkles"></i> Criar
+            agora</button></a>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer"><i
+            class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <aside class="drawer" id="drawer" aria-label="Menu móvel" hidden>
+    <button class="btn ghost" id="closeDrawer" style="width:100%"><i class="fa-solid fa-xmark"></i> Fechar</button>
+    <nav style="margin-top:16px">
+      <a href="sistema.html">Inicio</a>
+      <a href="configurar.html">Criar Histórias</a>
+      <a href="responsavel.html">Painel Responsável</a>
+    </nav>
+  </aside>
+
+  <body>
+
+
+    <!-- Layout principal: esquerda = form | direita = resultado -->
+    <section class="grid grid-2" style="gap:18px; margin-top:18px;">
+      <!-- FORM -->
+      <aside class="card" aria-labelledby="kids-form-title">
+        <div class="card-body">
+          <h2 id="kids-form-title" class="section-title">Configurar história</h2>
+          <p class="section-sub">Preencha os dados abaixo para criar uma história infantil segura e divertida.</p>
+
+          <form id="kids-form" autocomplete="off" aria-describedby="kids-form-desc">
+            <p id="kids-form-desc" class="hint">Campos com * são obrigatórios. Evitamos conteúdos assustadores e
+              linguagem complexa.</p>
+
+            <div class="field">
+              <label for="kids-name">Nome da criança*</label>
+              <input id="kids-name" class="input" type="text" placeholder="Ex.: Ana" required />
+            </div>
+
+            <div class="field" style="display:flex; gap:12px;">
+              <div style="flex:1">
+                <label for="kids-age">Idade*</label>
+                <select id="kids-age" class="input" required>
+                  <option value="2">2 anos</option>
+                  <option value="3" selected>3 anos</option>
+                  <option value="4">4 anos</option>
+                  <option value="5">5 anos</option>
+                  <option value="6">6 anos</option>
+                </select>
+              </div>
+              <div style="width:160px">
+                <label for="kids-language">Idioma*</label>
+                <select id="kids-language" class="input" required>
+                  <option>Português</option>
+                  <option>Inglês</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Temas favoritos*</label>
+              <div class="tags" id="kids-themes">
+                <label class="tag"><input type="checkbox" value="Animais"> 🐻 Animais</label>
+                <label class="tag"><input type="checkbox" value="Espaço"> 🚀 Espaço</label>
+                <label class="tag"><input type="checkbox" value="Fantasia"> 🏰 Fantasia</label>
+                <label class="tag"><input type="checkbox" value="Natureza"> 🌳 Natureza</label>
+                <label class="tag"><input type="checkbox" value="Amizade"> 🤝 Amizade</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="kids-tone">Tom / objetivo*</label>
+              <select id="kids-tone" class="input">
+                <option value="calmo">Calmo / Relaxante (hora de dormir)</option>
+                <option value="engracado" selected>Divertido</option>
+                <option value="educativo">Educativo (valores)</option>
+                <option value="aventura">Aventura leve</option>
+              </select>
+              <div class="hint">Escolha se a história deve ser relaxante, engraçada ou educativa.</div>
+            </div>
+
+            <div class="field">
+              <label for="kids-creativity">Imaginação (criatividade)</label>
+              <input id="kids-creativity" class="input" type="range" min="1" max="10" value="6" />
+              <div class="hint">1 = simples e literal, 10 = muito imaginativa</div>
+            </div>
+
+            <div class="field">
+              <label for="kids-length">Tamanho (aprox. palavras)</label>
+              <input id="kids-length" class="input" type="range" min="50" max="600" step="10" value="220" />
+              <div class="hint">Arraste para ajustar a extensão da história.</div>
+              <div style="margin-top:6px; font-weight:700">~ <span id="kids-length-value">220</span> palavras</div>
+            </div>
+
+            <div class="field">
+              <label for="kids-notes">Notas / Detalhes (opcional)</label>
+              <textarea id="kids-notes" class="input"
+                placeholder="Ex.: gosta de bolhas, tem medo de escuro — evite sustos"></textarea>
+            </div>
+
+            <div class="actions">
+              <button type="submit" id="kids-generate" class="btn primary">✨ Gerar História</button>
+             
+            </div>
+
+            
+          </form>
+        </div>
+      </aside>
+
+      <!-- PREVIEW / RESULT -->
+      <section class="card preview" aria-labelledby="kids-result-title">
+        <div class="card-body">
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <h2 id="kids-result-title">Resultado</h2>
+            <div style="display:flex;gap:8px;">
+              <button id="kids-voice" class="btn ghost" title="Ouvir">🔊 Ouvir</button>
+              <button id="kids-download" class="btn ghost" title="Baixar">⬇️ Baixar</button>
+            </div>
+          </div>
+
+          <div class="preview" style="margin-top:12px">
+  <div id="kids-story" class="story" role="region" aria-live="polite" tabindex="0"
+       style="min-height:220px; padding:14px;">
+    <em>Suas histórias geradas aparecerão aqui. Clique em Gerar História para criar uma nova.</em>
+  </div>
+
+  <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:10px;">
+    <button id="kids-copy" class="btn ghost">📋 Copiar</button>
+    <button id="kids-delete" class="btn ghost">🗑 Excluir</button>
+  </div>
+</div>
+
+            <hr style="margin:14px 0; border:none; border-top:1px dashed rgba(0,0,0,.06)">
+
+            <h3 style="margin:0 0 10px 0">Histórico</h3>
+            <div id="kids-history" style="max-height:140px; overflow:auto;"></div>
+          </div>
+        </div>
+      </section>
+    </section>
+    </main>
+
+    <!-- script -->
+    <script src="kids-story.js"></script>
+
+     <footer>
+        <img src="../src/wave.svg" alt="">
+
+        <div id="footer_items">
+            <span id="copyright">
+                &copy 2025 Alfa Play. Todos os direitos reservados.
+            </span>
+
+           
+            </div>
+        </div>
+    </footer>
+  </body>
+
+</html>
