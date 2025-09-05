@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alfa Play — Histórias Infantis Personalizadas</title>
+  <meta name="description" content="Crie histórias infantis personalizadas: os responsáveis escolhem a idade, temas e personagens. Site rápido, acessível e responsivo." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="sistemastyle.css" />
+  <script defer src="scriptsistema.js"></script>
+</head>
+<body>
+  <a class="sr-only" href="#main">Pular para conteúdo</a>
+
+  <header class="header" aria-label="Cabeçalho">
+    <div class="container wrap">
+      <div class="brand">
+        <a href="sistema.html"><img id="mascote" src="../src/perfil (1).png" alt="Mascote Alfa Play" loading="lazy" class="logo">
+        <span class="name">Alfa Play</span></a>
+      </div>
+
+      <nav class="primary" aria-label="Principal"> 
+        <a href="comousar.html">Como funciona</a>
+        <a href="configurar.html">Configurar</a>
+        <a href="beneficio.html">Benefícios</a>
+         <a href="responsavel.html">Painel Responsável</a>
+      </nav>
+      
+      <div class="actions">
+        <button id="themeBtn" class="btn ghost" aria-pressed="false" aria-label="Alternar tema"><i class="fa-solid fa-moon"></i></button>
+        <a href="configurar.html"><button class="btn primary"><i class="fa-solid fa-wand-magic-sparkles"></i> Criar agora</button></a>        
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <aside class="drawer" id="drawer" aria-label="Menu móvel" hidden>
+    <button class="btn ghost" id="closeDrawer" style="width:100%"><i class="fa-solid fa-xmark"></i> Fechar</button>
+    <nav style="margin-top:16px">
+      <a href="configurar.html" class="drawer-link">Configurar</a>
+      <a href="comousar.html" class="drawer-link">Como funciona</a>
+      <a href="beneficio.html" class="drawer-link">Benefícios</a>
+       <a href="responsavel.html">Painel Responsável</a>
+    </nav>
+  </aside>
+    
+      <div class="container">
+        <h2 class="section-title">Como funciona</h2>
+        <p class="section-sub">Simples, rápido e pensado com carinho para famílias.</p>
+        <div class="grid features">
+          <div class="feature">
+            <div class="icon"><i class="fa-solid fa-child-reaching"></i></div>
+            <div>
+              <h4>Idade adequada</h4>
+              <p class="hint">Texto e complexidade ajustados para cada faixa etária.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="icon"><i class="fa-solid fa-hat-wizard"></i></div>
+            <div>
+              <h4>Personagens favoritos</h4>
+              <p class="hint">De unicórnios a heróis, a imaginação é o limite.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="icon"><i class="fa-solid fa-shield-heart"></i></div>
+            <div>
+              <h4>Ambiente seguro</h4>
+              <p class="hint">Nada sai do seu dispositivo: usamos apenas armazenamento local.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+ 
+    <footer>
+        <img src="../src/wave.svg" alt="">
+
+        <div id="footer_items">
+            <span id="copyright">
+                &copy 2025 Alfa Play. Todos os direitos reservados.
+            </span>
+
+           
+            </div>
+        </div>
+    </footer>
+
+  
+</body>
+</html>
+
+
